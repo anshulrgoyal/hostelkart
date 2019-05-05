@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Thank You</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .btn {
+      position: relative;
+
+      display: block;
+      margin: 30px auto;
+      padding: 0;
+
+      overflow: hidden;
+
+      border-width: 0;
+      outline: none;
+      border-radius: 2px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+      background-color: #2ecc71;
+      color: #ecf0f1;
+
+      transition: background-color .3s;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #27ae60;
+    }
+
+    .btn>* {
+      position: relative;
+    }
+
+    .btn span {
+      display: block;
+      padding: 12px 24px;
+    }
+
+    .btn:before {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      display: block;
+      width: 0;
+      padding-top: 0;
+
+      border-radius: 100%;
+
+      background-color: rgba(236, 240, 241, .3);
+
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .btn:active:before {
+      width: 120%;
+      padding-top: 120%;
+
+      transition: width .2s ease-out, padding-top .2s ease-out;
+    }
+
+    /* Styles, not important */
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    html {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+
+      background-color: #ecf0f1;
+      color: #34495e;
+      font-family: Trebuchet, Arial, sans-serif;
+      text-align: center;
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+
+    .btn.orange {
+      background-color: #e67e22;
+    }
+
+    .btn.orange:hover,
+    .btn.orange:focus {
+      background-color: #d35400;
+    }
+
+    .btn.red {
+      background-color: #e74c3c;
+    }
+
+    .btn.red:hover,
+    .btn.red:focus {
+      background-color: #c0392b;
+    }
+
+    .portrait {
+      display: none;
+    }
+
+    .landscape {
+      display: block;
+    }
+
+    .kil {
+      display: none
+    }
+
+    .footer {
+
+      display: flex;
+
+      justify-content: space-around;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      .footer {
+        justify-content: center;
+        flex-direction: column;
+      }
+      .footerDiv {
+        display: block;
+        text-align: center
+      }
+
+      .portrait {
+        display: block;
+      }
+      .landscape {
+        display: none
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div style="margin:10px;">
+  <div style="font-size: 32px;text-align: center;color: skyblue">Thank You For Choosing
+    <br>
+    <span style="color: grey;font-weight: 700">Hostelkart</span>
+  </div>
+
+  <div style="color: gray;display: flex; justify-content: space-between">Profile
+    <span>
+      Order ID:
+      <%=book.bookid%>
+    </span>
+  </div>
+  <hr style="color: grey">
+  <div>
+    <%const time={'1':"12-1pm","2":'3-4pm',"3":'6-7pm'}%>
+      <%const cost={'1':{'p1':'4990','p2':'6900','p3':'7900'},'2':{'p1':'2099','p2':'4699','p3':'5999'}}%>
+        <div style="display: flex;flex-direction: column;padding: 20px;">
+          <div style="display: flex;justify-content: space-between">
+            <span>Name:</span>
+            <span>
+              <%=book.name%>
+            </span>
+          </div>
+          <div style="display: flex;justify-content: space-between">
+            <span>Address:</span>
+            <span>
+              <%=book.hostel %>
+            </span>
+          </div>
+          <div style="display: flex;justify-content: space-between">
+            <span>Contact Number:</span>
+            <span>
+              <%=book.number%>
+            </span>
+          </div>
+          <div style="display: flex;justify-content: space-between">
+            <span>Delivery Date:</span>
+            <span>
+              <%=book.date%>
+            </span>
+          </div>
+          <div style="display: flex;justify-content: space-between">
+            <span>Delivery Time:</span>
+            <span>
+              <%=time[book.time]%>
+            </span>
+          </div>
+        </div>
+  </div>
+  <div style="color: gray">Order Detials</div>
+  <hr style="color:grey">
+  <div style="display: flex;padding: 20px;justify-content: space-between;">
+    <span style="font-size: 24px">Order Detials</span>
+    <span>(Including GST)
+      <%=cost[book.colg][book.type]%>
+    </span>
+  </div>
+  <div style="color: gray;font-size: 28px;">Payment</div>
+  <hr style="color: grey;">
+<div style="display: flex;flex-direction: row;justify-content: space-between;">
+  
+  <div class="pay" style="display: flex;flex-direction: column;">
+   <div style="display: flex;justify-content: center;flex-direction: column;">
+     <div style="text-align: center">UPI</div>
+     <div style="text-align: center"><img src="/UPI.jpeg" alt="" width="200px"></div>
+     <div style="text-align: center">Pay To StudentSky@upi</div>
+   </div>
+  </div>
+
+  </div>
+  <div class="pay" style="display: flex;flex-direction: column;">
+    <div style="display: flex;justify-content: center;flex-direction: column;">
+      <div>Paytm</div>
+      <div><img src="/ptm.png" alt="" width="200px"></div>
+    </div>
+    <div style="display: flex;justify-content: center;flex-direction: column">
+    Currently unavailable
+   </div>
+ 
+   </div>
+</div>
+  <!-- <div style="display: flex;justify-content: space-around">
+    <span hidden>
+      <input type="radio" name="payment" value="ptm"> PYTM</span>
+    <span style="display: flex;">UPI :
+      <input type="radio" name="payment" value="upi"> </span>
+    <span style="display: flex;">Netbanking :
+      <input type="radio" name="payment" value="netbanking"> </span>
+  </div> -->
+  <!-- <div style="margin-left: 10vw;margin-right: 10vw">
+    <a href="" id="j" id="pay">
+      <input value="Pay" class="btn red" type="submit">
+  </div>
+  </a> -->
+
+  <!-- <div id="myNav2" class="overlay1" style="height: 100%">
+      <div style="text-align: left;font-size: 32px;color: aliceblue;position:fixed;top: 20vh;left: 5vh;" class="kil" onclick="closeNav2()">X</div>
+
+      <div style="margin: 2vh;margin-top: 23vh;" class="portrait">
+          <img src="/portrait.jpg" alt="">
+      </div>
+      <div style="margin-top: 23vh;text-align: center" class="landscape">
+          <img src="/landscape.png" alt="">
+      </div>
+
+  </div> -->
+  </div>
+
+  <script>
+   
+    //   document.getElementById("myNav2").style.width = "100%";
+    //   document.querySelector('.kil').style.display = "inline-block"
+    // function closeNav2() {
+    //   document.getElementById("myNav2").style.width = "0";
+    //   document.querySelector('.kil').style.display = "none"
+    // }
+    // Array.from(document.querySelectorAll('input[type="radio"]')).forEach((h) => {
+    //   h.addEventListener('click', (e) => {
+    //     document.getElementById('j').setAttribute('href', '/payment/' + e.target.value);
+    //   })
+    // })
+
+       
+  </script>
+</body>
+
+</html>

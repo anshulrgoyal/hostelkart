@@ -1,0 +1,95 @@
+.blockContainer{
+    width: 100%;
+    margin:0 auto;
+    padding: 0;
+}
+
+.headerBlock{
+    background-color: rgb(153, 204, 204);
+    margin: 0px;
+    position: relative;
+    left: 5px;
+    height: 50px;
+}
+img{
+    width:200px;
+}
+#mainContainer{
+    border-color: #aaa;
+    border-style:solid;
+    border-width:thin;
+    width: 100%;
+    margin: 0px 5px 5px 5px;
+    display: inline-block;
+    padding: 20px;
+}
+
+table{
+    border: 0px solid;
+    padding: 3px;
+    box-shadow: 4px 4px 5px rgb(218, 214, 214);
+}
+
+th {
+    color: #545454;
+}
+
+tr:nth-child(even){background-color: #E4E4E4}
+tr{
+    background-color: #F2F2F2;
+}
+
+label{
+    color: #545454;
+    font-weight:normal;
+}
+
+#heading0{
+    text-align: center;
+    color: #545454;
+    font-weight: bold;
+}
+
+.heading1{
+    text-align: center;
+    color: #0198FD;
+}
+
+.btn-custom{
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: block;
+    width: 130px;
+    margin: 0 auto;
+    background-color: #34ABFE !important;
+    color: white;
+    letter-spacing: -1px;
+}
+.btnDiv{
+    text-align: center;
+}
+
+
+form{
+    width: 100%;
+}
+
+.inputField{
+    width: 100%;
+    background-color: #F2F2F2;
+    border: 0px solid;
+    padding: 3px;
+    box-shadow: 4px 4px 5px rgb(218, 214, 214);
+}
+@media only screen and (max-width: 600px) {
+    th {
+        display: flex !important ;
+    }
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    display: flex;
+}
+}
