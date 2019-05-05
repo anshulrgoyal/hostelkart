@@ -70,7 +70,7 @@ var transporter = nodemailer.createTransport({
 });
 transporter.sendMail({
     from: 'info@venturesky.in',
-    bcc: 'anshulgoel151999@gmail.com',
+    bcc: 'rishabhrawat35@gmail.com',
     subject: 'HosteKart Order Details',
     html: template({book:pop})
     
