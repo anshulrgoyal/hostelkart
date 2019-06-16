@@ -1,5 +1,5 @@
 # HOSTELKART
-##Introduction
+## Introduction
 1. An e-commerce website which targets students moving in new hostel rooms in colleges.
 2. It uses node-js as back end server .
 3. Mongo db is used as the database .
